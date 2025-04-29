@@ -1,0 +1,139 @@
+.corbeille {
+  p {
+    color: #555;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      height: 60px;
+      transition: height 0.3s ease;
+      border: 1px solid rgba(252, 140, 121, 0.1);
+      margin-bottom: 8px;
+      padding: 10px;
+      border-radius: 5px;
+
+      .header-element {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .debut {
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+
+          span {
+            font-weight: bold;
+          }
+
+          svg{
+            transition: 0.1s ease-in-out;
+          }
+
+          &.open {
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+
+      &:nth-child(odd) {
+        background-color: rgba(255, 175, 165, 0.5);
+      }
+
+      &:nth-child(even) {
+        background-color: rgba(255, 175, 165, 0.25);
+      }
+
+      &.expanded {
+        height: 300px;
+
+        .details-element {
+          opacity: 100%;
+          pointer-events: auto;
+          a {
+            pointer-events: none;
+          }
+        }
+      }
+
+      .details-element {
+        display: flex;
+        flex-direction: row;
+        margin-top: 8px;
+        margin-left: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        width: 90%;
+        pointer-events: none;
+        gap: 2rem;
+      }
+
+      .boutons {
+        display: flex;
+
+        .bouton {
+          margin-left: 8px;
+          padding: 4px 12px;
+          cursor: pointer;
+          border-radius: 25px;
+        }
+
+        .bouton-supprimer {
+          background-color: #ff5555;
+          color: #fff;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #dd3333;
+          }
+          &:active {
+            background-color: #bb3333;
+          }
+        }
+
+        .bouton-restaurer {
+          background-color: #55aa55;
+          color: #fff;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #338833;
+          }
+
+          &:active {
+            background-color: #336633;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rectangle {
+  position: relative;
+  border-radius: 0;
+  background: linear-gradient(to bottom right, rgba(255, 175, 165, 0.15), rgba(255, 175, 165, 0.45));
+  width: max(8vw, 6em);
+  height: max(8vw / 0.7071, 6em / 0.7071);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  background: white;
+
+  .couverture {
+    width: max(10vw, 6em);
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+  }
+
+  img{
+    height: 100%;
+  }
+}

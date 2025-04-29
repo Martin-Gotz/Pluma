@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+.generateur-nom {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  min-width: 300px;
+  height: 55vh;
+  width: 30vw;
+  padding-block: 24px;
+  border-radius: 10px;
+  position: relative;
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+
+    &:focus{
+      border: 2px solid #fc8c79 ;
+    }
+  }
+
+  .boutonFermer img {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+    top: 20px;
+    position: absolute;
+    right: 20px;
+
+    &:hover{
+      width: 30px;
+      height: 30px;
+      transform: rotate(180deg);
+    }
+  }
+
+  .boutonGenerer {
+    background: #fc8c79;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    font-size: 16px;
+    display: block;
+
+    &:hover{
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .Prenom{
+    font-family: 'Ephesis', cursive;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(3vw + 1rem);
+  }
+
+  .prenomGenere{
+    font-size: 16px;
+  }
+
+  .SousPrenom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .PrenomSansFont{
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #727272;
+    }
+  }
+
+  .boutonCopier {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+
+    img {
+      width: 20px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

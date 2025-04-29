@@ -1,0 +1,66 @@
+@import 'tailwindcss/components';
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-et-texte a{
+  display: flex;
+  align-items: center;
+
+  .logo {
+    width: 50px;
+    height: auto;
+    margin-left: 20px;
+    margin-block: 10px;
+  }
+
+  h5 {
+    margin-left: 15px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  nav {
+    ul.menu-ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      a:not(.a-acces-espace){
+        margin-right: 3vw;
+        padding-block: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #333;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+
+      .a-acces-espace{
+        background-color: #FC8C79;
+        padding-block: 25px;
+        padding-inline: 50px;
+        border-radius: 0 0 0 45px;
+        color: white;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

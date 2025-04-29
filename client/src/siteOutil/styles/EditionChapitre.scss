@@ -1,0 +1,100 @@
+.retour{
+  position: absolute;
+  padding: 6px;
+  margin-left: 1vw;
+  margin-top: 1vw;
+  background: #ff6969;
+  border-radius: 100%;
+
+  svg{
+    width: 1vw;
+    height: 1vw;
+  }
+  
+  @media (max-width: 758px) {
+    svg{
+      width: 2vw;
+      height: 2vw;
+    }
+  }
+}
+
+.mon-espace {
+  overflow-y: hidden;
+  width: 100%;
+
+  .resume-chapitre {
+    display: flex;
+    align-items: flex-start;
+    width: 75%;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+
+    .couverture {
+      width: 12em;
+      height: calc(12em / 0.7071);
+      border-radius: 4px;
+      background-color: #b4bdc6;
+    }
+
+    .info-chapitre {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      h2{
+        color: #fc8e7f;
+        font-weight: bold;
+      }
+
+      label{
+        color: #fc8e7f;
+      }
+
+      .titre {
+        height: 40px;
+        font-size: 1.5em;
+      }
+
+      .date-creation{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+      }
+    }
+  }
+
+  .description{
+
+
+    .paragraphe{
+      font-size: 1.1em;
+      font-family: "Times New Roman", serif;
+      text-align: justify;
+      height: 50vh;
+      max-height: 50vh;
+      margin-bottom: 1vh;
+    }
+  }
+
+
+
+  .editer {
+    position: absolute;
+    width: 100px;
+    bottom: 25px;
+    right: 15px;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: #fc8c79;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #b36459;
+    }
+  }
+}

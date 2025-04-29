@@ -1,0 +1,303 @@
+.connexion-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+
+  .connexion-panel {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    min-height: 400px;
+    margin-top: 3%;
+
+    .panel-heading {
+      height: 4vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        min-width: 32%;
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 1vw;
+        border-radius: 40px 40px 0 0;
+        transition: color 0.1s ease-in-out;
+        color: white;
+
+        &:hover {
+          color: #ffe6e3;
+        }
+
+        &:nth-child(1) {
+          background-color: #fc8c79;
+        }
+
+        &:nth-child(2) {
+          background-color: #bf5748;
+        }
+
+        &.active {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .panel-body {
+      height: calc(100% - 50px);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .boite-slogan {
+        color: #bf5748;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 3px;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 75% ;
+          height: auto;
+          border: 2px;
+          border-radius: 8px;
+        }
+      }
+
+      &.connexion {
+        background-color: #FC8C79;
+
+        .boite-slogan {
+          border-radius: 0 20px 20px 0;
+          width: 50%;
+          background-color: white;
+        }
+      }
+
+      &.inscription {
+        background-color: #bf5748;
+
+        .boite-slogan {
+          border-radius: 20px 0 0 20px;
+          width: 50%;
+          background-color: white;
+        }
+      }
+
+      .formulaire {
+        width: 50%;
+
+        &.formulaire-connexion {
+          border-radius: 20px 0 0 20px;
+        }
+
+        &.formulaire-inscription {
+          border-radius: 0 20px 20px 0;
+        }
+
+        form {
+          height: 100%;
+        }
+
+        .contenu-formulaire {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+
+          .en-tete-slogan {
+            height: 10%;
+            display: flex;
+            align-items: center;
+            padding: 5%;
+
+            p {
+              color: #FFFFFF;
+              font-size: 150%;
+              text-align: center;
+              letter-spacing: 3px;
+            }
+          }
+
+          .champs-formulaire {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 5%;
+            margin-bottom: 1.5%;
+
+            .champ-formulaire {
+              display: flex;
+              justify-content: center;
+              width: 100%;
+              height: 60px;
+
+              input {
+                width: 65%;
+                height: 100%;
+                min-height: 40px;
+                border: 2px solid transparent;
+                border-radius: 10px;
+                outline: none;
+                background-color: #f8fafc;
+                color: #0d0c22;
+                transition: 0.3s ease;
+
+                &::placeholder {
+                  color: #94a3b8;
+                }
+
+                &:focus, &:hover {
+                  outline: none;
+                  border-color: #FFFFFF;
+                  background-color: #FFFFFF;
+                  box-shadow: 0 0 0 5px #FFFFFF;
+                }
+              }
+            }
+          }
+
+          .auth-message{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1em;
+
+            p {
+              color: #ffffff;
+              font-size: 14px;
+              text-align: center;
+              padding-inline: 24px;
+              padding-block: 8px;
+              border-radius: 2px;
+            }
+
+            &.error p{
+              background: red;
+            }
+
+            &.success p{
+              background: #05d509;
+            }
+          }
+        }
+      }
+
+      .bouton-connexion-inscription {
+        z-index: 1;
+        position: relative;
+        padding: 10px 22px;
+        border-radius: 6px;
+        border: none;
+        color: #fc8c79;
+        cursor: pointer;
+        background-color: #FFFFFF;
+        transition: all 0.2s ease;
+        margin-bottom: 3%;
+
+        &:active {
+          transform: scale(0.96);
+        }
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: "";
+          width: 150%;
+          left: 50%;
+          height: 100%;
+          transform: translateX(-50%);
+          z-index: -1000;
+          background-repeat: no-repeat;
+        }
+
+        &:hover::before {
+          top: -70%;
+          background-image: radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, transparent 20%, #FFFFFF 20%, transparent 30%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, #FFFFFF 15%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%);
+          background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+          background-position: 50% 120%;
+          animation: greentopBubbles 0.6s ease;
+        }
+
+        &:hover::after {
+          bottom: -70%;
+          background-image: radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, #FFFFFF 15%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%),
+          radial-gradient(circle, #FFFFFF 20%, transparent 20%);
+          background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+          background-position: 50% 0;
+          animation: greenbottomBubbles 0.6s ease;
+        }
+      }
+
+
+
+      @keyframes greentopBubbles {
+        0% {
+          background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+          40% 90%, 55% 90%, 70% 90%;
+        }
+
+        50% {
+          background-position: 0 80%, 0 20%, 10% 40%, 20% 0, 30% 30%, 22% 50%,
+          50% 50%, 65% 20%, 90% 30%;
+        }
+
+        100% {
+          background-position: 0 70%, 0 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+          50% 40%, 65% 10%, 90% 20%;
+          background-size: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+        }
+      }
+
+      @keyframes greenbottomBubbles {
+        0% {
+          background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+          70% -10%, 70% 0%;
+        }
+
+        50% {
+          background-position: 0 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+          105% 0;
+        }
+
+        100% {
+          background-position: 0 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+          110% 10%;
+          background-size: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.retour{
+  position: absolute;
+  padding: 6px;
+  margin-left: 1vw;
+  margin-top: 1vw;
+  background: #ff6969;
+  border-radius: 100%;
+
+  svg{
+    width: 1vw;
+    height: 1vw;
+  }
+
+  @media (max-width: 758px) {
+    svg{
+      width: 2vw;
+      height: 2vw;
+    }
+  }
+}

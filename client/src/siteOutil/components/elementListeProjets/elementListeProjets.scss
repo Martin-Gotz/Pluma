@@ -1,0 +1,304 @@
+.element-liste-projet-general {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  $Fav-size: 25px;
+  $Fav-lineThickness: 4px;
+  $Star-color: #ffa033;
+
+  .popup {
+    position: absolute;
+  }
+
+  .Del {
+
+    .bin {
+      cursor: pointer;
+      opacity: 0.7;
+      transition: 0.1s ease-in-out;
+      position: absolute;
+      background: white;
+      border-bottom-left-radius: 30%;
+      height: $Fav-size;
+      width: calc($Fav-size/1.5);
+      z-index: 10;
+      right: 0;
+      padding-bottom: 2px;
+      padding-top: 2px;
+      filter: drop-shadow(0px 0px 4px rgb(255, 255, 255)) drop-shadow(0 0 0 transparent);
+
+      &:hover {
+        opacity: 1;
+        fill: #be0000;
+      }
+    }
+
+    .Del-Icon {
+      transition: fill 0.1s ease-in-out;
+    }
+
+    &:hover {
+      .Del-Icon {
+        fill: rgb(239 68 68);
+      }
+    }
+
+    &:active {
+      .Del-Icon {
+        fill: rgb(185 28 28);
+      }
+    }
+  }
+
+  .Fav {
+    position: absolute;
+    cursor: pointer;
+    height: $Fav-size;
+    width: $Fav-size;
+    z-index: 10;
+
+    &:active {
+      .Fav-star {
+        fill: #ffd193;
+      }
+    }
+
+    &.favorited {
+      .Fav-bloom {
+        animation: background 0.5s ease both;
+      }
+
+      .Fav-sparkle .Fav-sparkle-line::before {
+        animation: line 1s ease both;
+      }
+
+      .Fav-star {
+        animation: star 1s ease both;
+      }
+
+      .Fav-star {
+        fill: $Star-color;
+      }
+    }
+
+    .Fav-bloom {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      border-width: 0;
+      border-style: solid;
+      border-color: #ffa624;
+      will-change: border-width;
+    }
+
+    .Fav-star {
+      z-index: 1;
+      padding: 4px;
+      width: 100%;
+      height: 100%;
+      fill: #FFF;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 0 transparent);
+    }
+
+    @keyframes star {
+      0% {
+        transform: scale(1);
+      }
+
+      20% {
+        fill: $Star-color;
+        transform: scale(0);
+      }
+
+      30% {
+        transform: scale(0);
+      }
+
+      60% {
+        transform: scale(1.1);
+      }
+
+      70% {
+        transform: scale(0.9);
+      }
+
+      100% {
+        fill: $Star-color;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes background {
+      0% {
+        border-width: $Fav-size/2;
+        transform: scale(0);
+      }
+
+      90% {
+        transform: scale(1);
+      }
+
+      100% {
+        border-width: 0;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  }
+
+  .element-liste-projet {
+    flex: 0 0 auto;
+    position: relative;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    .rectangle {
+      position: relative;
+      border-radius: 4px;
+      background: linear-gradient(to bottom right, rgba(255, 175, 165, 0.15), rgba(255, 175, 165, 0.45));
+      width: max(10vw, 6em);
+      height: max(10vw / 0.7071, 6em / 0.7071);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75em;
+      transition: filter 0.1s ease;
+
+      &:hover {
+        filter: brightness(80%);
+      }
+
+      .couverture {
+        color: rgba(0, 0, 0, 0.75);
+        text-align: center;
+        border-radius: 4px;
+      }
+
+      img{
+        height: 100%;
+      }
+    }
+
+    .affichage-statut {
+      position: absolute;
+      border-radius: 50%;
+      bottom: -3%;
+      right: -3%;
+      background-color: #ffffff;
+      padding: 6%;
+
+      &.en-cours {
+        background-color: #5098e2;
+      }
+
+      &.en-pause {
+        background-color: #fda001;
+      }
+
+      &.termine {
+        background-color: #26cf4c;
+      }
+    }
+  }
+
+
+  $color-bg-primary: #d0d6df;
+  $color-bg-primary-offset: #f1f3f7;
+  $color-bg-secondary: #fff;
+  $color-text-primary: #222326;
+  $color-text-primary-offset: #898c94;
+  $color-black: $color-text-primary;
+  $color-red: #d92027;
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg-secondary;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(#404040, 0.15);
+    z-index: 30;
+    width: fit-content;
+
+    .menu-list {
+      margin: 0;
+      display: block;
+      padding: 8px;
+      & + .menu-list {
+        border-top: 1px solid #ddd;
+      }
+
+      .menu-item {
+        position: relative;
+        min-width: 100%;
+        width: max-content;
+      }
+
+      .menu-button {
+        font: inherit;
+        border: 0;
+        padding: 8px 36px 8px 8px;
+        width: 100%;
+        border-radius: 8px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: $color-bg-secondary;
+
+        &:hover {
+          background-color: $color-bg-primary-offset;
+          color: $color-text-primary;
+          & + .menu-sub-list {
+            display: flex;
+          }
+          svg {
+            stroke: $color-text-primary;
+          }
+        }
+
+        svg {
+          flex-shrink: 0;
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          stroke: $color-text-primary-offset;
+
+          &:nth-of-type(2) {
+            margin-right: 0;
+            position: absolute;
+            right: 8px;
+          }
+        }
+
+        &--delete {
+          &:hover {
+            color: $color-red;
+            svg:first-of-type {
+              stroke: $color-red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

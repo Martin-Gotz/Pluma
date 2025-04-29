@@ -1,0 +1,46 @@
+.editable-input,
+.editable-textarea {
+  padding: 8px;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  overflow: hidden;
+  align-content: center;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 2px solid #FC8C79;
+  }
+}
+
+.editable-textarea {
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  overflow: auto;
+}
+
+.texte {
+  border-radius: 4px;
+  width: fit-content;
+  height: 100%;
+  overflow-y: auto;
+
+  &:hover {
+    background-color: #fffcf4;
+    outline: 1px solid rgba(252, 140, 121, 0.5);
+  }
+}
+
+.champ {
+  padding: 2px 8px 0 8px;
+  transform: translateX(-8px);
+  overflow: hidden;
+}
+
+.paragraphe {
+  padding: 8px;
+  width: 100%;
+  white-space: pre-wrap;
+}

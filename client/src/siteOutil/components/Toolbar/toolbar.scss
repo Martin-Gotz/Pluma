@@ -1,0 +1,132 @@
+.toolbar {
+  width: 65px;
+
+  .dndnode__disabled{
+    display: flex;
+    justify-content: center;
+  }
+
+  .dndnode {
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+
+    &.list {
+      cursor: default;
+      position: relative;
+      transition: 0.2s ease;
+
+      .img-list, svg{
+        cursor: pointer;
+      }
+
+      &.active{
+        .img-list{
+          scale: 1.05;
+          filter: drop-shadow(1px 1px 3px #000000);
+        }
+
+        ul{
+          display: block;
+        }
+      }
+
+      &.personnage {
+        ul {
+          background: #fc8c79;
+        }
+      }
+
+      &.lieu {
+        ul {
+          background: #52ad66;
+        }
+      }
+
+      &.evenement {
+        ul {
+          background: #df331a;
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        right: -70px;
+        top: 0;
+        padding: 5px;
+        max-height: 30vh;
+        overflow-y: auto;
+        width: 70px;
+
+        svg{
+          margin-top: 10px;
+          width: 40px;
+          height: 40px;
+          margin-inline: auto;
+        }
+
+        li{
+          margin-bottom: 15px;
+          text-align: center;
+          font-size: 12px;
+          line-height: 1;
+        }
+
+        li img {
+          margin-inline: auto;
+          cursor: grab;
+          width: 40px;
+          height: 40px;
+          margin-bottom: 5px;
+        }
+
+        &:hover{
+          display: flex;
+          overflow-x: hidden;
+        }
+      }
+
+      &:hover {
+        ul {
+          display: block;
+          overflow-x: hidden;
+        }
+
+        z-index: 21;
+      }
+    }
+
+    &__disabled {
+      filter: grayscale(100%);
+    }
+  }
+
+  img {
+    width: 40px;
+    max-width: 50px;
+  }
+
+  .generateur-nom-button{
+    button{
+      margin-bottom: 12px;
+
+      img{
+        width: 27.5px;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}

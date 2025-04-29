@@ -1,0 +1,10 @@
+# Suppression des fichiers de Docker
+.dockerignore
+dockerfile
+
+# Suppression des fichiers de git
+.gitignore
+.git
+
+# Suppression des fichiers et dossiers de NodeJS
+nodes_modules

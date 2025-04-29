@@ -1,0 +1,246 @@
+.elements-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .retour{
+    position: absolute;
+    padding: 6px;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    background: #ff6969;
+    border-radius: 100%;
+    top: 0;
+    left: 10px;
+
+    svg{
+      width: 1vw;
+      height: 1vw;
+    }
+
+    @media (max-width: 758px) {
+      svg{
+        width: 2vw;
+        height: 2vw;
+      }
+    }
+  }
+
+  .panel {
+    position: absolute;
+    width: 80%;
+    height: 75%;
+
+      .panel-heading {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          background-color: #fc8c79;
+          min-width: 32%;
+          cursor: pointer;
+          font-weight: bold;
+          letter-spacing: 2px;
+          font-size: 1vw;
+          border-radius: 40px 40px 0 0;
+          transition: color 0.1s ease-in-out;
+
+          &:hover {
+            color: white;
+          }
+
+          &:nth-child(1),
+          &:nth-child(3) {
+            margin: 0 -8%;
+          }
+
+          &:nth-child(2) {
+            background-color: #52ad66;
+          }
+
+          &:nth-child(3) {
+            background-color: #df331a;
+          }
+
+          &.active {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .panel-body{
+        height: 90%;
+      }
+    }
+}
+
+
+
+.edition-global{
+  border-radius: 20px;
+  height: 100%;
+
+  &.personnage {
+    background-color: #FC8C79;
+  }
+
+  &.lieux {
+    background-color: #52ad66;
+  }
+
+  &.evenements {
+    background-color: #df331a;
+  }
+
+  .edition-header{
+    .bouton-ajout-element{
+      border-radius: 20px;
+    }
+  }
+  .edition-principal{
+    gap: 3%;
+
+    .edition-liste {
+      width: 30%;
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 0.5rem;
+          padding: 1rem;
+          background-color: #fff5e0;
+          cursor: pointer;
+          margin-left: 5px;
+          transition: margin-left 0.1s ease-in-out;
+
+          &:hover {
+            filter: brightness(90%);
+          }
+
+          &:nth-child(even) {
+            //background-color: #ffe9c5;
+          }
+
+          &.element-selectionne{
+            background-color: rgba(252, 140, 121, 0.5);
+            margin-left: -5px;
+          }
+        }
+      }
+    }
+
+    .edition-info{
+      width: 65%;
+
+      .nom {
+        height: 15%;
+        font-size: 1.5em;
+        margin-bottom: 5px;
+      }
+
+      .editable-textarea, .paragraphe {
+        height: 50%;
+      }
+    }
+
+    .edition-onglet{
+      border-radius: 20px;
+      position: relative;
+
+      .bouton-valider-element {
+        position: absolute;
+        width: 100px;
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+        border-radius: 25px;
+        background-color: #fc8c79;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #b36459;
+        }
+      }
+    }
+  }
+}
+
+.bouton-ajout-element {
+  position: relative;
+  min-width: 180px;
+  max-width: 180px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #FC8C79;
+  border-radius: 20px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.bouton-ajout-element, .bouton-ajout-element__icon, .bouton-ajout-element__text {
+  transition: all 0.3s;
+}
+
+.bouton-ajout-element .bouton-ajout-element__text {
+  transform: translateX(-15px);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ffb7ab;
+  font-weight: 600;
+}
+
+.bouton-ajout-element .bouton-ajout-element__icon {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 39px;
+  background-color: #ffb7ab;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bouton-ajout-element .svg {
+  width: 30px;
+  stroke: #ffffff;
+}
+
+.bouton-ajout-element:hover {
+  background: #ffb7ab;
+}
+
+.bouton-ajout-element:hover .bouton-ajout-element__text {
+  color: transparent;
+}
+
+.bouton-ajout-element:hover .bouton-ajout-element__icon {
+  width: 100%;
+  border-radius: 0;
+}
+
+.bouton-ajout-element:active .bouton-ajout-element__icon {
+  background-color: #cc7066;
+}
+
+.bouton-ajout-element:active {
+  border: 1px solid #cc7066;
+}

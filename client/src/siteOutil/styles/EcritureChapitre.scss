@@ -1,0 +1,111 @@
+.write-chapter{
+  display: flex;
+  overflow: hidden;
+
+  .write-chapter-content{
+    width: 100%;
+
+    h3{
+      font-size: 18px;
+      font-weight: bold;
+      //padding: 12px 0 8px 0;
+    }
+
+    .write-chapter-textarea{
+      margin-inline: auto;
+      width: max(55vw * 0.7071, 7.5em * 0.7071);
+      height: max(90vh, 7.5em);
+
+      @media (max-width: 758px) {
+        height: max(87.5vh, 7.5em);
+        width: max(100vw * 0.7071, 7.5em * 0.7071);
+      }
+
+      .tox:not([dir=rtl]) .tox-statusbar__branding, .tox:not([dir=rtl]) .tox-statusbar__path>*{
+        display: none;
+      }
+
+      .tox .tox-editor-header {
+        z-index: 0;
+        background: #ffd9d7;
+      }
+
+      .tox .tox-toolbar-overlord .tox-toolbar:not(.tox-toolbar--scrolling):first-child, .tox .tox-toolbar-overlord .tox-toolbar__primary {
+        background: #ffd9d7;
+      }
+    }
+  }
+
+  .retour-salle-chapitres{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: #FFAFA5;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #d68e80;
+    }
+  }
+
+  .switch-chapter{
+    p{
+      background: white;
+      text-align: center;
+      font-size: 18px;
+      padding: 5px 10px;
+      margin-inline: 5px;
+    }
+
+    button{
+      border: 2px solid black;
+      border-radius: 100%;
+      transition: 0.1s ease;
+
+      &:hover:not(&:disabled){
+        transform: scale(1.03);
+        border-color: #d68e80;
+
+        svg{
+          stroke: #d68e80;
+        }
+      }
+
+      &:disabled{
+        filter: invert(60%);
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+.tox.tox-tinymce-aux .tox-toolbar__overflow {
+  background: #ffc5be !important;
+}
+
+.tox-tinymce {
+  border-radius: 4px !important;
+}
+
+.save-container{
+  position: relative;
+  .sauvegarde{
+    position: absolute;
+    top: -35px;
+    .error p{
+      color: rgba(217, 7, 7, 0.8);
+    }
+
+    .process p{
+      color: rgba(190, 134, 112, 0.8);
+    }
+
+    .success p{
+      color: rgba(4, 173, 7, 0.8);
+    }
+  }
+}

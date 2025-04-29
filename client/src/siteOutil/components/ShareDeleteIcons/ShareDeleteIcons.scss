@@ -1,0 +1,22 @@
+.profil-tools{
+  position: absolute;
+
+  .share, .bin{
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.1s ease-in-out;
+  }
+
+  .share:hover, .bin:hover{
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  .share:hover{
+    stroke: #0076be;
+  }
+
+  .bin:hover{
+    fill: #be0000;
+  }
+}

@@ -1,0 +1,98 @@
+@import 'tailwindcss/components';
+
+.partie-principale-hero{
+    height: 60vh;
+
+  .logoaccueil {
+    opacity: 0.67;
+    height: 100%;
+  }
+
+  .plumaText {
+    position: relative;
+    color: white;
+    bottom: 20vh;
+    font-size: 15vh;
+    z-index: 1;
+    text-shadow: 2px 2px 0 #D68E80, -2px -2px 0 #D68E80, 2px -2px 0 #D68E80, -2px 2px 0 #D68E80;
+    letter-spacing: 50px;
+    margin-left: 50px;
+  }
+}
+
+.slogan {
+  margin-top: 30px;
+  position: relative;
+  font-size: 24px;
+  color: #D68E80;
+  text-align: center;
+  font-weight: bold;
+}
+
+.slogan::before,
+.slogan::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  height: 2px;
+  background-color: #D68E80;
+  max-width: 15vw;
+  min-width: 1vw;
+}
+
+.slogan::before {
+  left: -10px;
+  transform: translateX(-100%);
+}
+
+.slogan::after {
+  right: -10px;
+  transform: translateX(100%);
+}
+
+/*
+.slogan::before,
+.slogan::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  background-color: #D68E80;
+  top: 50%;
+  left: -10px;
+  right: -10px;
+  opacity: 0.7;
+}
+
+.slogan::before {
+  transform: translateX(-100%);
+}
+
+.slogan::after {
+  transform: translateX(100%);
+}
+*/
+
+.btnAccueil {
+  font-family: 'Titillium Web', sans-serif;
+  width: 150px;
+  height: 45px;
+  margin-top: 20px;
+  border-radius: 50px;
+  background-color: #FC8C79;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  color: white;
+
+  &:hover{
+    background-color: #FFAFA5;
+  }
+}
+
+.btnMonEspace{
+  width: unset !important;
+}

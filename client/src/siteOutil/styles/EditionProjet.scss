@@ -1,0 +1,166 @@
+.context-menu {
+  background: white;
+  border-style: solid;
+  box-shadow: 10px 19px 20px rgba(0, 0, 0, 10%);
+  position: absolute;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.context-menu p {
+  font-weight: bold;
+  background-color: #ff6969;
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+  text-transform: capitalize;
+  line-height: 10px;
+}
+
+.context-menu button {
+  border: none;
+  display: block;
+  padding: 0.5em;
+  text-align: left;
+  width: 100%;
+}
+
+.context-menu button:hover {
+  background: #e1e1e1;
+}
+
+/// NODE DESIGN ///
+
+.react-flow__node-default.selectable.selected, .react-flow__node-default.selectable:focus, .react-flow__node-default.selectable:focus-visible, .react-flow__node-input.selectable.selected, .react-flow__node-input.selectable:focus, .react-flow__node-input.selectable:focus-visible, .react-flow__node-output.selectable.selected, .react-flow__node-output.selectable:focus, .react-flow__node-output.selectable:focus-visible, .react-flow__node-group.selectable.selected, .react-flow__node-group.selectable:focus, .react-flow__node-group.selectable:focus-visible {
+  box-shadow: none;
+}
+
+.react-flow__panel.top {
+  top: 7%;
+}
+
+.chapitre-node{
+  border-radius: 0;
+  background-color: #ffafa5;
+  border: solid 1px white;
+  padding-block: 50px;
+  padding-inline: 10px;
+
+  &:focus{
+    border: solid #b26b5d;
+    box-shadow: none;
+    cursor: default;
+  }
+
+  p:first-letter{
+    text-transform: capitalize;
+  }
+
+  p:first-child{
+    font-style: italic;
+    font-size: 10px;
+  }
+}
+
+.acte-node{
+  border: dashed #bf5748;
+  background: none;
+
+  p{
+    font-weight: bold;
+    font-style: italic;
+    color: #bf5748;
+    cursor: text;
+    font-size: 12px;
+    padding: 10px 50px 100px 50px;
+  }
+
+  p:first-letter{
+    text-transform: capitalize;
+  }
+}
+
+.personnage-node{
+  background-color: #fc8c79;
+  border: none;
+  padding: 0;
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  font-size: 6px;
+  text-align: center;
+}
+
+.lieu-node{
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #52ad66;
+  font-size: 8px;
+
+  p{
+    padding-left: 3px;
+  }
+}
+
+.evenement-node{
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #df331a;
+  font-size: 8px;
+  text-align: center;
+
+  p{
+    margin: 0;
+    position: absolute;
+    top: 75%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+.personnage-node p, .lieu-node p{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.blocnote-node {
+  width: 125px;
+  border-radius: 0;
+  background-color: #d68e80;
+  padding: 30px 0; /* Ajoutez de la marge supérieure et inférieure */
+  border: none;
+
+  .titre-blocnote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #b26b5d;
+    color: white;
+    font-style: italic;
+    text-align: start;
+    margin: 0;
+
+    p {
+      margin-left: 5px;
+      font-size: 8px;
+    }
+  }
+
+  .contenu-blocnote {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    padding: 2px;
+    font-size: 6px;
+    text-align: start;
+  }
+}

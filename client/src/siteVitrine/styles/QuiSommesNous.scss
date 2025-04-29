@@ -1,0 +1,106 @@
+@import 'tailwindcss/components';
+
+.contentContainerQuiSommesNous{
+  position: relative;
+
+  .decoQuiSommesNous {
+    position: absolute;
+    z-index: -5;
+    opacity: 0.5;
+
+    .livre-ouvert{
+      width: 10%;
+      margin-left: 5vw;
+      margin-top: 150px;
+      transform: rotate(0deg);
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    .livre-fermer{
+      width: 10%;
+      margin-left: 15vw;
+      margin-top: 150px;
+      transform: rotate(0deg);
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(0, 10px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @media (max-width: 1023px) {
+      opacity: 0.2;
+    }
+  }
+
+  .decoQuiSommesNousDroite {
+    position: absolute;
+    z-index: -5;
+    opacity: 0.5;
+
+    .livre-fermer{
+      width: 07%;
+      margin-left: 85vw;
+      margin-top: 150px;
+      transform: rotate(0deg);
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    .livre-ouvert{
+      width: 07%;
+      margin-left: 75vw;
+      margin-top: 150px;
+      transform: rotate(0deg);
+      animation: floating 3s ease-in-out infinite;
+    }
+
+
+    @keyframes floating {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(0, 10px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @media (max-width: 1023px) {
+      opacity: 0.2;
+    }
+  }
+
+
+
+
+  .containerQuiSommesNous {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 99;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #FC8C79;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+  }
+}

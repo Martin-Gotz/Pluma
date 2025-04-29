@@ -1,0 +1,256 @@
+.postitbar {
+  background: #ffafa5;
+  width: 20vw;
+  height: 80vh;
+  margin-block: auto;
+  border-top: white solid 3px;
+  border-left: white solid 3px;
+  border-bottom: white solid 3px;
+  transition: width 0.3s ease;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  &__content {
+    transition: 0.1s ease;
+    overflow-y: auto;
+    margin-block: 6px;
+
+    h5{
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    &.close{
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .postit-container{
+      margin-inline: 20px;
+
+      .postit{
+        margin-block: 20px;
+
+        &:first-child {
+          margin-top:0;
+          margin-bottom: 20px;
+        }
+
+        .header-section{
+          position: relative;
+          background: #b26b5d;
+
+          h6{
+            color: white;
+            padding-block: 10px;
+            padding-left: 10px;
+            font-weight: bold;
+            font-style: italic;
+          }
+
+          svg{
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            cursor: pointer;
+            transition: 0.1s ease;
+
+            &:hover{
+              stroke: #b70606;
+              scale: 1.4;
+            }
+
+            &:active{
+              stroke: #d90707;
+              scale: 1.2;
+            }
+          }
+        }
+
+        .content-section{
+          background: #d68e80;
+
+          p{
+            padding: 5px;
+            min-height: 100px;
+            max-height: 500px;
+            overflow-y: auto;
+            text-align: justify;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .add-postit{
+        filter: grayscale(75%);
+        margin-inline: 48px;
+        transition: 0.2s ease;
+        cursor: pointer;
+
+        .header-section{
+          background: #a86255;
+          min-height: 30px;
+        }
+
+        .content-section{
+          min-height: 150px;
+          p{
+            min-height: 0;
+            text-align: center;
+            font-size: 16px;
+          }
+        }
+
+        svg{
+          transition: 0.2s ease;
+        }
+
+        &:hover{
+          scale: 1.05;
+          filter: grayscale(50%);
+
+          svg{
+            scale: 1.2;
+            stroke: #a0d680;
+          }
+        }
+
+      }
+
+      hr{
+        margin-block: 40px;
+        border-color: #d68e80;
+      }
+    }
+
+  }
+
+  &.close {
+    width: 10px;
+    transition: width 0.3s ease;
+  }
+}
+
+.overlay {
+  color: black;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  .overlay-post-it-container{
+    position: relative;
+    background: #ffafa5;
+    border-radius: 5px;
+    width: 30vw;
+  }
+
+  .new-postit-form{
+    padding-inline: 3vw;
+    padding-block: 3vh;
+
+    h6{
+      filter: drop-shadow(0px 0px 16px #000000);
+      color: white;
+      font-weight: bold;
+    }
+
+    .header-section{
+      width: 100%;
+      position: relative;
+
+      input{
+        background: #b26b5d;
+        width: 100%;
+        color: white;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 16px;
+      }
+    }
+
+    .content-section{
+      width: 100%;
+      background: #d68e80;
+
+      textarea{
+        background: #d68e80;
+        overflow-y: auto;
+        resize: none;
+        text-align: justify;
+        font-size: 14px;
+        height: 30vh;
+      }
+    }
+
+    input::placeholder, textarea::placeholder{
+      color: #d7d7d7;
+    }
+  }
+
+  svg{
+    opacity: 0.7;
+    cursor: pointer;
+    transition: 0.1s ease;
+    border-radius: 50%;
+
+    &:hover{
+      opacity: 1;
+      stroke: #b70606;
+      scale: 1.2;
+    }
+
+    &:active{
+      opacity: 1;
+      stroke: #d90707;
+      scale: 1.1;
+    }
+  }
+
+
+  .btn-add-post-it{
+    padding: 8px;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #fc8c79;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-add-post-it:hover {
+    scale: 1.05;
+    background-color: #fc8c79;
+    color: #ffffff;
+  }
+
+  .btn-add-post-it:active {
+    scale: 0.95;
+  }
+}
+
+.toggle-button-right {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  left: -25px;
+  overflow: hidden;
+  rotate: 180deg;
+  bottom: 50%;
+  z-index: 5;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-right: 3px solid white;
+
+  &.close{
+    left: -20px;
+  }
+}

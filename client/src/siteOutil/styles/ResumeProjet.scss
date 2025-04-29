@@ -1,0 +1,97 @@
+.mon-espace {
+  overflow-y: hidden;
+
+  .resume-projet {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+
+    .couverture {
+      width: 12em;
+      height: calc(12em / 0.7071);
+      border-radius: 4px;
+      background-color: #b4bdc6;
+
+      .image-avatar {
+        border-radius: 0;
+      }
+    }
+
+    a {
+      pointer-events: none;
+    }
+
+    .info-projet {
+      margin-left: 40px;
+      width: 41vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      .titre {
+        height: 40px;
+        font-size: 1.5em;
+      }
+
+      .date-creation, .etat-projet {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+      }
+    }
+  }
+
+  .separator {
+    height: 2px;
+    background-color: rgba(119, 119, 119, 0.5);
+    border-radius: 1px;
+    margin-bottom: 10px;
+  }
+
+  .titre-description {
+    font-size: 1.4rem;
+  }
+
+  .paragraphe-resume{
+    font-size: 1.2em;
+    font-family: "Times New Roman", serif;
+    line-height: 2.2;
+    text-align: justify;
+    height: 35vh;
+    max-height: 35vh;
+    margin-bottom: 1vh;
+    margin-top: 15px;
+  }
+
+  .editer {
+    position: absolute;
+    width: 100px;
+    bottom: 25px;
+    right: 15px;
+    padding: 8px;
+    border-radius: 25px;
+    background-color: #fc8c79;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #b36459;
+    }
+  }
+
+
+
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+}

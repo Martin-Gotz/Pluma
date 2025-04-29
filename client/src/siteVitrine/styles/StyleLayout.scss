@@ -1,0 +1,11 @@
+.div-principale-vitrine {
+  display: inline-flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .contenu {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
